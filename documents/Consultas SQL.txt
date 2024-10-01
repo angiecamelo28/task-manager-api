@@ -1,0 +1,88 @@
+-- Crear la tabla Users
+CREATE TABLE Users (
+    userId INT PRIMARY KEY,
+    name NVARCHAR(100) NOT NULL,
+    age INT NOT NULL
+);
+
+-- Crear la tabla UserSkills para almacenar las habilidades de cada usuario
+CREATE TABLE UserSkills (
+    skillId INT IDENTITY(1,1) PRIMARY KEY,
+    userId INT FOREIGN KEY REFERENCES Users(userId),
+    skill NVARCHAR(50) NOT NULL
+);
+
+
+-- Insertar datos en la tabla Users
+INSERT INTO Users (userId, name, age) VALUES
+(1, 'Carlos Pérez', 25),
+(2, 'María Gómez', 30),
+(3, 'Juan Rodríguez', 28),
+(4, 'Ana Morales', 22),
+(5, 'Luis Fernández', 35);
+
+
+-- Insertar habilidades en la tabla UserSkills
+INSERT INTO UserSkills (userId, skill) VALUES
+(1, 'JavaScript'),
+(1, 'Angular'),
+(1, 'TypeScript'),
+(2, 'Python'),
+(2, 'Django'),
+(2, 'Machine Learning'),
+(3, 'HTML'),
+(3, 'CSS'),
+(3, 'JavaScript'),
+(4, 'Java'),
+(4, 'Spring'),
+(4, 'MySQL'),
+(5, 'PHP'),
+(5, 'Laravel'),
+(5, 'Vue.js');
+
+
+SELECT u.userId, u.name, u.age, s.skill
+FROM Users u
+JOIN UserSkills s ON u.userId = s.userId
+ORDER BY u.userId;
+
+CREATE TABLE Tasks (
+    id INT PRIMARY KEY,
+    title NVARCHAR(255) NOT NULL,
+    date DATE NOT NULL,
+    completed BIT NOT NULL
+);
+
+
+CREATE TABLE TaskUsers (
+    taskId INT FOREIGN KEY REFERENCES Tasks(id),
+    userId INT FOREIGN KEY REFERENCES Users(userId),
+    PRIMARY KEY (taskId, userId)
+);
+
+-- Insertar datos en la tabla Tasks
+INSERT INTO Tasks (id, title, date, completed) VALUES
+(1, 'Tarea A', '2024-01-01', 0),
+(2, 'Tarea B', '2024-01-01', 1),
+(3, 'Tarea C', '2024-01-01', 0),
+(4, 'Tarea D', '2024-01-01', 1);
+
+-- Insertar relaciones entre tareas y usuarios en la tabla TaskUsers
+INSERT INTO TaskUsers (taskId, userId) VALUES
+(1, 1), -- Tarea A asignada a Carlos Pérez
+(1, 2), -- Tarea A asignada a María Gómez
+(2, 3), -- Tarea B asignada a Juan Rodríguez
+(2, 4), -- Tarea B asignada a Ana Morales
+(3, 4), -- Tarea C asignada a Ana Morales
+(3, 1), -- Tarea C asignada a Carlos Pérez
+(4, 5), -- Tarea D asignada a Luis Fernández
+(4, 4); -- Tarea D asignada a Ana Morales
+
+
+SELECT t.id, t.title, t.date, t.completed, u.name
+FROM Tasks t
+JOIN TaskUsers tu ON t.id = tu.taskId
+JOIN Users u ON u.userId = tu.userId
+ORDER BY t.id;
+
+
