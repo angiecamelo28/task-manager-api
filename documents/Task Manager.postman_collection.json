@@ -1,183 +1,622 @@
 {
 	"info": {
-		"_postman_id": "7fe00f95-f212-4f01-8ff2-98e33ad21da5",
+		"_postman_id": "2acef7b4-1117-43d3-bbfd-bade992a8ace",
 		"name": "Task Manager",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "11576210",
-		"_collection_link": "https://blue-shuttle-705915.postman.co/workspace/Cosmetika~67af1fb5-849e-49d3-b91c-e05c77e7d0fd/collection/11576210-7fe00f95-f212-4f01-8ff2-98e33ad21da5?action=share&source=collection_link&creator=11576210"
+		"_exporter_id": "26170698"
 	},
 	"item": [
 		{
-			"name": "Obtener tareas",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/tasks",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"tasks"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Crear una tarea",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Tarea E\",\r\n  \"date\": \"2024-01-05\",\r\n  \"completed\": false,\r\n  \"users\": [1, 3]\r\n}\r\n",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Obtener usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/tasks",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"tasks"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Actualizar una tarea",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Tarea A Actualizada\",\r\n    \"date\": \"2024-01-01\",\r\n    \"completed\": true,\r\n    \"users\": [\r\n        1,\r\n        2\r\n    ]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					},
+					"response": [
+						{
+							"name": "Obtener usuarios",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "431"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1af-9cBk5MfABGvPO5udtkDqSOz6Q6c\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Oct 2024 16:24:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": 1,\n        \"name\": \"Carlos Pérez\",\n        \"age\": 25,\n        \"skills\": [\n            \"Angular\",\n            \"JavaScript\",\n            \"TypeScript\"\n        ]\n    },\n    {\n        \"userId\": 2,\n        \"name\": \"María Gómez\",\n        \"age\": 30,\n        \"skills\": [\n            \"Django\",\n            \"Machine Learning\",\n            \"Python\"\n        ]\n    },\n    {\n        \"userId\": 3,\n        \"name\": \"Juan Rodríguez\",\n        \"age\": 28,\n        \"skills\": [\n            \"CSS\",\n            \"HTML\",\n            \"JavaScript\"\n        ]\n    },\n    {\n        \"userId\": 4,\n        \"name\": \"Ana Morales\",\n        \"age\": 22,\n        \"skills\": [\n            \"Java\",\n            \"MySQL\",\n            \"Spring\"\n        ]\n    },\n    {\n        \"userId\": 5,\n        \"name\": \"Luis Fernández\",\n        \"age\": 35,\n        \"skills\": [\n            \"Laravel\",\n            \"PHP\",\n            \"Vue.js\"\n        ]\n    }\n]"
 						}
-					}
+					]
 				},
-				"url": {
-					"raw": "http://localhost:3000/tasks/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"tasks",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Obtener usuarios",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Crear un usuario",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Pedro López\",\r\n    \"age\": 29,\r\n    \"skills\": [\r\n        \"Node.js\",\r\n        \"Express\",\r\n        \"SQL\"\r\n    ]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "Crear un usuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Laura López\",\r\n    \"age\": 30,\r\n    \"skills\": [\r\n        \"Node.js\",\r\n        \"Express\",\r\n        \"SQL\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
 						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Actualizar un usuario",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Carlos López\",\r\n    \"age\": 26,\r\n    \"skills\": [\r\n        \"JavaScript\",\r\n        \"React\",\r\n        \"TypeScript\"\r\n    ]\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+					},
+					"response": [
+						{
+							"name": "Crear un usuario",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Pedro Ramirez\",\r\n    \"age\": 29,\r\n    \"skills\": [\r\n        \"Node.js\",\r\n        \"Express\",\r\n        \"SQL\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-Y45iVv6ZSrijp3Fz/MlIIBP6jcQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Oct 2024 16:25:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Usuario creado con éxito"
 						}
-					}
+					]
 				},
-				"url": {
-					"raw": "http://localhost:3000/users/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"1"
+				{
+					"name": "Actualizar un usuario",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Carlos López\",\r\n    \"age\": 26,\r\n    \"skills\": [\r\n        \"JavaScript\",\r\n        \"React\",\r\n        \"TypeScript\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Actualizar un usuario",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Carlos López\",\r\n    \"age\": 26,\r\n    \"skills\": [\r\n        \"JavaScript\",\r\n        \"React\",\r\n        \"TypeScript\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/users/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-59cEGaExCGGdf+b/ZnnlA38NvNc\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Oct 2024 16:39:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"errors\": null,\n    \"response\": \"Usuario actualizado exitosamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Eliminar un usuario",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Eliminar un usuario",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/users/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"users",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-r+jx/L85shoXwloDw9kJkIJATBA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Oct 2024 16:39:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"errors\": null,\n    \"response\": \"Usuario eliminado exitosamente\"\n}"
+						}
 					]
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Eliminar un usuario",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/users/1",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"users",
-						"1"
+			"name": "Tareas",
+			"item": [
+				{
+					"name": "Obtener tareas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Obtener tareas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/tasks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "315"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13b-Pj8RTEwSaNkJ4l+Bp5G/zllDChk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Oct 2024 16:20:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"Tarea A\",\n        \"date\": \"2024-01-01\",\n        \"completed\": false,\n        \"users\": [\n            1,\n            2\n        ]\n    },\n    {\n        \"id\": 2,\n        \"title\": \"Tarea B\",\n        \"date\": \"2024-01-01\",\n        \"completed\": true,\n        \"users\": [\n            3,\n            4\n        ]\n    },\n    {\n        \"id\": 3,\n        \"title\": \"Tarea C\",\n        \"date\": \"2024-01-01\",\n        \"completed\": false,\n        \"users\": [\n            1,\n            4\n        ]\n    },\n    {\n        \"id\": 4,\n        \"title\": \"Tarea D\",\n        \"date\": \"2024-01-01\",\n        \"completed\": true,\n        \"users\": [\n            4,\n            5\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Crear una tarea",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Tarea E\",\r\n  \"date\": \"2024-01-05\",\r\n  \"completed\": false,\r\n  \"users\": [1, 3]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tasks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Crear una tarea",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"title\": \"Tarea E\",\r\n  \"date\": \"2024-01-05\",\r\n  \"completed\": false,\r\n  \"users\": [1, 3]\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/tasks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"tasks"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"52-WYSDsJZr0rBI3mS0a0xXI09gMXY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Oct 2024 16:36:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 201,\n    \"errors\": null,\n    \"response\": \"Tarea creada exitosamente\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Actualizar una tarea",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Tarea A Actualizada\",\r\n    \"date\": \"2024-01-01\",\r\n    \"completed\": true,\r\n    \"users\": [\r\n        1,\r\n        2\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/tasks/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Actualizar una tarea",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Tarea A Actualizada\",\r\n    \"date\": \"2024-01-01\",\r\n    \"completed\": true,\r\n    \"users\": [\r\n        1,\r\n        5\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/tasks/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"tasks",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "87"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"57-il80auJhbnIOnT9cVeFZWfpetM0\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Oct 2024 16:41:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"status\": 200,\n    \"errors\": null,\n    \"response\": \"Tarea actualizada exitosamente\"\n}"
+						}
 					]
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
